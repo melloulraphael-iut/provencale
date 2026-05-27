@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Profil B · L'Âme Provençale — Romanella Events</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+  :root {
+    --vert: #6B7B5E;
+    --terracotta: #A0614A;
+    --brun: #2A1F0F;
+    --creme: #F5EED8;
+    --sable: #E8DFC4;
+    --moyen: #6B5A3E;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--sable);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: var(--brun);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bandeau {
+    width: 100%;
+    background-color: var(--vert);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--creme);
+  }
+
+  .page {
+    max-width: 680px;
+    width: 100%;
+    padding: 0 24px 60px;
+  }
+
+  .entete {
+    text-align: center;
+    padding: 48px 0 36px;
+    border-bottom: 1px solid var(--terracotta);
+  }
+
+  .profil-label {
+    font-size: 9px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 16px;
+  }
+
+  .titre {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--brun);
+    margin-bottom: 10px;
+  }
+
+  .sous-titre {
+    font-size: 15px;
+    font-style: italic;
+    color: var(--moyen);
+    line-height: 1.6;
+  }
+
+  .ornement {
+    font-size: 28px;
+    color: var(--terracotta);
+    opacity: 0.4;
+    margin: 28px 0 0;
+  }
+
+  .portrait {
+    margin: 40px 0 32px;
+    background: var(--creme);
+    border: 1px solid #C8B898;
+    padding: 32px;
+  }
+
+  .portrait-intro {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--moyen);
+    margin-bottom: 18px;
+  }
+
+  .portrait p {
+    font-size: 15px;
+    line-height: 2;
+    color: #2A1F0F;
+    text-align: justify;
+  }
+
+  .portrait p + p { margin-top: 14px; }
+
+  .citation {
+    margin: 0 0 40px;
+    border-left: 3px solid var(--terracotta);
+    padding: 18px 24px;
+    background: var(--creme);
+  }
+
+  .citation p {
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--brun);
+  }
+
+  .section-titre {
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--moyen);
+    margin-bottom: 24px;
+    padding-top: 8px;
+    border-top: 1px solid #C8B898;
+  }
+
+  .chaises {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .chaise-card {
+    background: var(--creme);
+    border: 1px solid #C8B898;
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .chaise-icone { font-size: 36px; margin-bottom: 10px; opacity: 0.7; }
+
+  .chaise-nom {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--brun);
+    margin-bottom: 6px;
+  }
+
+  .chaise-desc {
+    font-size: 11px;
+    font-style: italic;
+    color: var(--moyen);
+    line-height: 1.5;
+  }
+
+  .chaise-role {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-top: 8px;
+  }
+
+  .cta-bloc {
+    background: #2A1F0F;
+    padding: 40px 32px;
+    text-align: center;
+  }
+
+  .cta-bloc p {
+    font-size: 13px;
+    font-style: italic;
+    color: rgba(245,238,216,0.7);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--terracotta);
+    color: var(--creme);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 14px 32px;
+    margin-bottom: 16px;
+  }
+
+  .cta-contacts {
+    margin-top: 20px;
+    border-top: 1px solid rgba(160,97,74,0.3);
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .contact-item { text-align: center; }
+
+  .contact-label {
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(160,97,74,0.8);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .contact-val {
+    font-size: 12px;
+    color: rgba(245,238,216,0.6);
+    text-decoration: none;
+  }
+
+  .footer {
+    width: 100%;
+    max-width: 680px;
+    text-align: center;
+    padding: 24px;
+    font-size: 10px;
+    font-style: italic;
+    color: var(--moyen);
+  }
+
+  .footer a { color: var(--terracotta); text-decoration: none; }
+
+  @media (max-width: 500px) {
+    .titre { font-size: 32px; }
+    .chaises { grid-template-columns: 1fr; }
+    .cta-contacts { flex-direction: column; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bandeau">✦ &nbsp; Romanella Events · Location de chaises vintage · Provence &nbsp; ✦</div>
+
+<div class="page">
+
+  <div class="entete">
+    <p class="profil-label">✦ Profil B · Majorité de B ✦</p>
+    <h1 class="titre">L'Âme<br/>Provençale</h1>
+    <p class="sous-titre">Vous voulez que votre fête sente le thym et la lavande.<br/>La chaleur humaine avant la mise en scène — et pourtant, le décor doit resonner juste.</p>
+    <div class="ornement">❧</div>
+  </div>
+
+  <div class="portrait">
+    <p class="portrait-intro">— &nbsp; Votre portrait</p>
+    <p>Vous n'aimez pas les fêtes qui sentent l'effort. Vous voulez que vos invités entrent et ressentent immédiatement quelque chose de doux, de familier, de vrai. Pas de grandiose, pas de clinquant — juste ce sentiment qu'on est arrivé quelque part où il fait bon être.</p>
+    <p>La Provence n'est pas pour vous un décor de carte postale. C'est une manière d'être. Le mix & match assumé, les matières naturelles, la lumière qui joue entre les chaises dépareillées — c'est votre signature, et elle raconte quelque chose d'authentique sur vous.</p>
+  </div>
+
+  <div class="citation">
+    <p>« La plus belle table provençale, c'est celle où les chaises ne se ressemblent pas — et où pourtant tout s'harmonise comme par évidence. »</p>
+  </div>
+
+  <p class="section-titre">— &nbsp; Votre composition de chaises</p>
+
+  <div class="chaises">
+    <div class="chaise-card">
+      <div class="chaise-icone">🪑</div>
+      <div class="chaise-nom">Lucie</div>
+      <div class="chaise-desc">Osier naturel tressé, légèreté végétale</div>
+      <div class="chaise-role">Pièce maîtresse</div>
+    </div>
+    <div class="chaise-card">
+      <div class="chaise-icone">🪑</div>
+      <div class="chaise-nom">Tolix Vintage</div>
+      <div class="chaise-desc">Métal patiné, âme d'atelier, caractère brut</div>
+      <div class="chaise-role">Contraste assumé</div>
+    </div>
+    <div class="chaise-card">
+      <div class="chaise-icone">🪑</div>
+      <div class="chaise-nom">Mix & Match</div>
+      <div class="chaise-desc">Sélection dépareillée cohérente, bois & rotin</div>
+      <div class="chaise-role">L'âme du mélange</div>
+    </div>
+  </div>
+
+  <div class="cta-bloc">
+    <p>Cette composition vous ressemble ? Contactez-nous pour vérifier les disponibilités à votre date et recevoir un devis personnalisé.</p>
+    <a class="cta-btn" href="mailto:frederique@romanellaevents.fr">Demander cette composition →</a>
+    <div class="cta-contacts">
+      <div class="contact-item">
+        <span class="contact-label">Margaux</span>
+        <a href="tel:0652178667" class="contact-val">06 52 17 86 67</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Frédérique</span>
+        <a href="tel:0613541037" class="contact-val">06 13 54 10 37</a>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Email</span>
+        <a href="mailto:frederique@romanellaevents.fr" class="contact-val">frederique@romanellaevents.fr</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <a href="https://www.instagram.com/romanella_location_chaises">@romanella_location_chaises</a>
+  &nbsp;·&nbsp;
+  <a href="https://www.pinterest.fr/frederiquebergn/romanella/">Pinterest Romanella</a>
+  &nbsp;·&nbsp; © 2026 Romanella Events
+</div>
+
+</body>
+</html>
